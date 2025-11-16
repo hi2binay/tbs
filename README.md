@@ -1,58 +1,195 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎫 Laravel Ticket Booking System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A production-ready ticket booking system built with Laravel 12, featuring advanced concurrency control, multi-gateway payments, and comprehensive testing.
 
-## About Laravel
+## ✨ Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Core Functionality
+- 🎪 **Event Management** - Create and manage events with multiple ticket types
+- 🎟️ **Smart Reservation System** - Atomic concurrency control prevents double-booking
+- 💳 **Multi-Gateway Payments** - Stripe, Razorpay, PayPal, UPI support
+- 📧 **Automated Notifications** - Email and SMS alerts for bookings
+- ⏰ **Auto-Expiry** - Reservations expire after configurable TTL
+- 🔐 **Secure Authentication** - Laravel Sanctum for API + web
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Frontend
+- 📱 **Responsive Bootstrap 5 UI** - Beautiful event browsing and booking
+- 🔍 **Advanced Search** - Filter, sort, and paginate events
+- 👤 **User Dashboard** - View booking history and details
+- 🎨 **Professional Design** - Modern gradient UI with smooth animations
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Backend Admin Panel
+- 📊 **Dashboard** - Real-time statistics (events, bookings, revenue)
+- ⚙️ **Full CRUD** - Manage events, tickets, users, bookings
+- 💰 **Refund Management** - Process refunds with inventory restoration
+- 🔒 **Admin Protection** - Secure middleware-based access control
 
-## Learning Laravel
+### Concurrency & Performance
+- ⚡ **Atomic Operations** - Conditional UPDATEs prevent race conditions
+- 🔒 **Row-Level Locking** - Safe concurrent booking confirmations
+- 📈 **Load Tested** - k6 scripts for 10,000+ concurrent requests
+- ✅ **Inventory Integrity** - CHECK constraints and reconciliation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Developer Experience
+- 🧪 **74 Tests** - Unit, feature, concurrency, and integration tests
+- 📚 **Comprehensive Docs** - 12+ markdown guides
+- 🎯 **Pest PHP** - Modern testing with readable syntax
+- 🚀 **One-Command Setup** - Get started in minutes
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Quick Start
 
-## Laravel Sponsors
+```bash
+# Clone and setup
+git clone <repo-url>
+cd tbs
+composer install
+npm install
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+# Configure environment
+cp .env.example .env
+php artisan key:generate
 
-### Premium Partners
+# Setup database
+php artisan migrate --seed
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+# Build assets
+npm run build
 
-## Contributing
+# Start development server (runs server, queue, logs, vite)
+composer dev
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Visit `http://localhost:8000` to see the application!
 
-## Code of Conduct
+**Default Admin Login:**
+- Email: `admin@example.com`
+- Password: `password`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📖 Documentation
 
-## Security Vulnerabilities
+- **[QUICK_START.md](QUICK_START.md)** - Detailed setup guide
+- **[AGENTS.md](AGENTS.md)** - Commands and guidelines
+- **[FRONTEND.md](FRONTEND.md)** - UI documentation
+- **[BACKEND_ADMIN_PANEL.md](BACKEND_ADMIN_PANEL.md)** - Admin guide
+- **[NOTIFICATIONS.md](NOTIFICATIONS.md)** - Notification system
+- **[TESTING.md](TESTING.md)** - Testing guide
+- **[IMPLEMENTATION_CHECKLIST.md](IMPLEMENTATION_CHECKLIST.md)** - Feature status
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🏗️ Architecture
+
+```
+app/
+├── Http/Controllers/
+│   ├── Api/V1/           # API endpoints (/api/v1/*)
+│   ├── Auth/             # Authentication
+│   ├── Backend/          # Admin panel (/backend/*)
+│   └── *.php             # Frontend controllers
+├── Models/               # Eloquent models
+├── Services/
+│   ├── Reservation/      # Core booking logic
+│   └── Payment/          # Payment gateways
+└── Notifications/        # Email/SMS notifications
+```
+
+## 🔑 Key Concepts
+
+### Concurrency Control
+The system uses **atomic conditional UPDATEs** to prevent race conditions:
+
+```php
+// Atomic inventory decrement - no overselling possible
+DB::table('ticket_types')
+  ->where('id', $ticketTypeId)
+  ->whereRaw('(total_quantity - sold_count - reserved_count) >= ?', [$qty])
+  ->update(['reserved_count' => DB::raw("reserved_count + $qty")]);
+```
+
+### Reservation Flow
+1. **Reserve** → Atomic inventory decrement, create pending reservation
+2. **Payment** → Create payment intent (outside transaction)
+3. **Confirm** → Lock reservation, move reserved → sold, create booking
+4. **Expire** → Scheduled job restores inventory from expired reservations
+
+### Payment Abstraction
+All payment gateways implement `PaymentGateway` interface:
+- `createPaymentIntent()` - Initiate payment
+- `capture()` - Capture authorized payment
+- `webhook()` - Handle provider callbacks
+- `refund()` - Process refunds
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+php artisan test
+
+# Run concurrency tests
+php artisan test tests/Feature/Concurrency/
+
+# Run with coverage
+php artisan test --coverage
+
+# Load test with k6 (10,000 concurrent users)
+k6 run tests/k6/concurrency-test.js
+```
+
+**Test Coverage:** 74 tests across unit, feature, concurrency, and integration
+
+## 🛠️ Tech Stack
+
+- **Laravel 12** - PHP 8.2+
+- **Bootstrap 5** - Responsive UI
+- **Laravel Sanctum** - API authentication
+- **Pest PHP** - Modern testing
+- **Vite** - Asset bundling
+- **MySQL/PostgreSQL** - Production database
+- **SQLite** - Testing database
+
+## 📊 API Endpoints
+
+### Events
+- `GET /api/v1/events` - List events (with search/filter/sort)
+- `GET /api/v1/events/{id}` - Event details
+
+### Reservations (requires auth)
+- `POST /api/v1/reservations` - Create reservation
+- `GET /api/v1/reservations/{id}` - View reservation
+- `DELETE /api/v1/reservations/{id}` - Cancel reservation
+
+### Bookings (requires auth)
+- `GET /api/v1/bookings` - User's bookings
+- `GET /api/v1/bookings/{id}` - Booking details
+
+### Payments
+- `POST /api/v1/payments/intent` - Create payment intent
+- `POST /api/v1/payments/webhook` - Payment webhook
+
+See [API documentation](docs/api.md) for details.
+
+## 🔐 Security
+
+- CSRF protection on all forms
+- SQL injection prevention via Eloquent ORM
+- XSS protection in Blade templates
+- Password hashing with bcrypt
+- API rate limiting
+- Admin middleware protection
+- Webhook signature verification
+
+## 🌟 Production Deployment
+
+Before deploying to production:
+
+1. **Configure real payment gateways** in `.env`
+2. **Setup email service** (SMTP/Mailgun/SES)
+3. **Setup SMS service** (Twilio/AWS SNS)
+4. **Configure queue driver** (Redis/SQS)
+5. **Setup caching** (Redis)
+6. **Enable monitoring** (Sentry/Bugsnag)
+7. **Run performance tests** with k6
+8. **Security audit** and penetration testing
+
+See [deployment guide](docs/deployment.md) for detailed instructions.
 
 ## License
 
