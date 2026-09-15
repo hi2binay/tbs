@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>David Chen</title>
+    <meta name="description" content="Resume of David Chen — Principal DevOps Engineer">
+    <meta name="keywords" content="resume, cv, David Chen, Principal DevOps Engineer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&family=Source+Sans+3:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&family=Rubik:wght@300;400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700&family=Figtree:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&family=EB+Garamond:wght@400;500;600;700&family=Bitter:wght@300;400;500;600;700&family=Crimson+Pro:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --heading-font: Plus Jakarta Sans, sans-serif;
+            --body-font: Inter, sans-serif;
+            --heading-size: 24px;
+            --body-size: 14px;
+            --section-font: Sora, sans-serif;
+            --section-size: 16px;
+            --primary: #7F1D1D;
+            --background: #FFFFFF;
+            --background-secondary: #F8FAFC;
+            --text: #334155;
+            --accent: #F43F5E;
+            --section-margin: 8px;
+            --line-spacing: 1.6;
+            --page-padding: 30px;
+            --accent-style: sidebar;
+            --section-border: none;
+            --divider-style: none;
+            --text-muted: #475569;
+            --text-dim: #94a3b8;
+            --border-color: #e2e8f0;
+            --badge-bg: color-mix(in srgb, var(--background-secondary) 15%, white);
+            --badge-text: color-mix(in srgb, var(--background-secondary) 80%, var(--text));
+            --name-size: 24px;
+            --job-title-size: 15px;
+            --contact-size: 12px;
+            --color-name: #7F1D1D;
+            --color-heading: #7F1D1D;
+            --divider-width: 0.5px;
+            --divider-color: #CCCCCC;
+            --bullet-char: '\2022';
+            --bullet-indent: 1.2em;
+            --space-section-before: 12px;
+            --space-section-after: 6px;
+            --space-entry-after: 10px;
+            --space-bullet-after: 4px;
+            --photo-width: 120px;
+            --photo-height: 120px;
+                                                --col-1-width: 68%;
+                    --col-1-bg: var(--background);
+                                            --col-1-pad-x: 0px;
+                                                                                                --col-2-width: 32%;
+                    --col-2-bg: var(--background-secondary);
+                                            --col-2-pad-x: 0px;
+                                                                                    --col-2-border-left: 1px solid #E2E8F0;
+                                                                                        --header-bg: transparent;
+                    }
+        @page { margin: 0; size: A4; }
+        * { box-sizing: border-box; }
+        body {
+            font-family: var(--body-font); font-size: var(--body-size); line-height: var(--line-spacing);
+            color: var(--text); margin: 0;
+            -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        }
+        @media print {
+            section { break-inside: avoid; page-break-inside: avoid; }
+            .pdf-primary-col, .pdf-secondary-col { page-break-inside: auto; }
+            section > [style*="margin"] { break-inside: avoid; page-break-inside: avoid; }
+            section::after { content: ""; display: table; clear: both; }
+        }
+        @media screen and (max-width: 600px) {
+            .pdf-wrapper, .container, .sheet, body { max-width: 100% !important; padding-left: 12px !important; padding-right: 12px !important; }
+            .columns, .main-grid, [style*="grid-template-columns"] { grid-template-columns: 1fr !important; display: flex !important; flex-direction: column !important; }
+            .pdf-secondary-col, .col-right, .right-col, .content-right { order: 2; }
+            .pdf-primary-col, .col-left, .left-col, .content-left { order: 1; }
+            h1, h2, h3 { font-size: 0.9em !important; }
+            body, p, li, span, td, div { font-size: 0.92em !important; }
+            header, .banner, .header { flex-direction: column !important; text-align: center !important; }
+            header > div, .banner > div, .header > div { width: 100% !important; }
+        }
+        /* Badge colors adapt to column background */
+        .left-col, .col-left, .content-left, .pdf-primary-col { --badge-bg: color-mix(in srgb, var(--background) 15%, white); --badge-text: color-mix(in srgb, var(--background) 80%, var(--text)); }
+        .right-col, .col-right, .content-right, .pdf-secondary-col, .sidebar { --badge-bg: color-mix(in srgb, var(--background-secondary) 15%, white); --badge-text: color-mix(in srgb, var(--background-secondary) 80%, var(--text)); }
+    </style>
+        <style>
+
+        :root {
+            --heading-font: Plus Jakarta Sans, sans-serif;
+            --body-font: Inter, sans-serif;
+            --heading-size: 24px;
+            --body-size: 14px;
+            --section-font: Sora, sans-serif;
+            --section-size: 16px;
+            --primary: #7F1D1D;
+            --background: #FFFFFF;
+            --text: #334155;
+            --accent: #F43F5E;
+            --section-margin: 8px;
+            --line-spacing: 1.6;
+            --page-padding: 30px;
+            --muted: #64748b;
+            --sidebar-bg: var(--background-secondary);
+            --border: #E2E8F0;
+        }
+        @page { margin: 0; size: A4; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--body-font); font-size: var(--body-size);
+            line-height: var(--line-spacing); color: var(--text); margin: 0;
+            -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        }
+        .sheet {
+            max-width: 820px; margin: 0 auto; background: var(--background);
+            min-height: 297mm;
+            padding: var(--page-padding);
+            padding-bottom: 0px;
+        }
+
+        .hero {
+            display: flex; align-items: center; gap: 20px;
+        }
+        .hero-photo {
+            width: var(--photo-width); height: var(--photo-height); border-radius: 50%; overflow: hidden;
+            flex-shrink: 0;
+        }
+        .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hero-info { flex: 1; min-width: 0; }
+        .hero-name {
+            font-family: var(--heading-font); font-size: var(--heading-size); font-weight: 800;
+            color: var(--primary); line-height: 1.1; letter-spacing: -0.02em;
+        }
+        .hero-label {
+            font-size: var(--body-size); font-weight: 500; color: var(--muted);
+            text-transform: uppercase; letter-spacing: 0.1em; margin-top: 6px;
+        }
+
+        .contact-bar {
+            display: flex; flex-wrap: wrap; gap: 4px 16px;
+            margin-top: 10px; padding-top: 12px;  color: var(--muted);
+            border-top: 1.5px solid var(--primary);
+        }
+        .contact-bar svg { width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; fill: var(--muted); }
+        .contact-bar a { color: inherit; text-decoration: none; }
+
+         .profile-bar {
+            display: flex; flex-wrap: wrap; gap: 4px 16px;
+        }
+        .profile-bar svg { width: 14px; height: 14px; vertical-align: middle; fill: var(--muted); }
+        .profile-bar a { color: inherit; text-decoration: none; }
+        .profile-bar span span {  display: inline !important; margin: 0 !important;  vertical-align: top !important;}
+
+        .body { display: flex; margin-top: 30px; }
+        .main-col {
+            width: var(--col-1-width);
+            padding-right: calc(var(--page-padding) * 0.65);
+            padding-bottom: var(--page-padding);
+            display: flex; flex-direction: column;
+            background: var(--background);
+        }
+        .side-col {
+            width: var(--col-2-width);
+            padding: 0px calc(var(--page-padding) * 0.65);
+            padding-bottom: var(--page-padding);
+            border-left: 1px solid var(--border);
+            display: flex; flex-direction: column; gap: 20px;
+            background: var(--sidebar-bg);
+        }
+        section { page-break-inside: avoid; }
+
+        .section-title {
+            font-family: var(--section-font); font-size: var(--section-size); font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.1em; color: #FFFFFF;
+            margin-bottom: 10px; padding: 4px 12px 2px;
+            background: linear-gradient(90deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 60%, var(--primary)) 100%);
+        }
+        .section-card {
+            background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 4%, transparent) 0%, color-mix(in srgb, var(--accent) 2%, transparent) 100%);
+            border-radius: 6px; padding: 12px 0px;
+        }
+        .sidebar-section {
+            padding-top: 12px;
+        }
+        .side-title {
+            font-family: var(--section-font); font-size: var(--section-size); font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
+            margin-bottom: 12px; padding-left: 10px;
+            border-left: 2px solid var(--border);
+            background: var(--background-secondary);
+        }
+
+        h3 { font-family: var(--heading-font); font-size: calc(var(--body-size) * 1.03); font-weight: 700; color: var(--primary); margin: 0; }
+        .entry { margin-bottom: 22px; page-break-inside: avoid; }
+        .entry:last-child { margin-bottom: 0; }
+        .entry-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; }
+        .entry-sub { font-size: calc(var(--body-size) * 1); font-weight: 500; color: var(--accent); margin-bottom: 5px; }
+        .entry-meta { font-size: calc(var(--body-size) * 0.95); color: var(--muted); }
+        .date { font-size: calc(var(--body-size) * 0.95); color: var(--muted); white-space: nowrap; }
+        p { margin: 6px 0; font-size: calc(var(--body-size) * 0.95);}
+        ul { padding-left: 14px; margin: 5px 10px; }
+        li { margin-bottom: 4px; font-size: calc(var(--body-size) * 0.95); color: var(--muted); }
+        a { color: var(--accent); text-decoration: none; }
+
+        .side-contact { display: flex; flex-direction: column; gap: 8px; }
+        .side-contact-item { display: flex; align-items: center; gap: 7px; font-size: calc(var(--body-size) * 0.95); color: var(--text); }
+        .side-contact-item svg { width: 11px; height: 11px; flex-shrink: 0; fill: var(--muted); }
+        .side-contact-item a { color: inherit; text-decoration: none; }
+        .side-skill-cat { margin-bottom: 8px; }
+        .side-skill-cat:last-child { margin-bottom: 0; }
+        .side-skill-label { font-size: calc(var(--body-size) * 0.95); font-weight: 600; color: var(--primary); margin-bottom: 3px;display: none; }
+        .side-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+        .side-tag {
+            display: inline-block; padding: 2px 7px; background: var(--background);
+            border: 1px solid var(--border); border-radius: 3px;
+            font-size: calc(var(--body-size) * 0.87); color: var(--text-muted);
+        }
+        .side-lang { display: flex; justify-content: space-between; align-items: baseline; font-size: calc(var(--body-size) * 0.95); color: var(--text-muted); margin-bottom: 3px; }
+        .side-lang strong { font-weight: 600; color: var(--primary); }
+        .side-lang .fluency { color: var(--muted); font-size: calc(var(--body-size) * 0.82); }
+        .side-interests { display: flex; flex-wrap: wrap; gap: 3px; }
+        .side-interest-pill {
+            display: inline-block; padding: 2px 7px;
+            background: var(--primary); color: #fff;
+            border-radius: 999px; font-size: calc(var(--body-size) * 0.80); font-weight: 500;
+        }
+        .side-cert { font-size: calc(var(--body-size) * 0.86); color: var(--text-muted); margin-bottom: 6px; }
+        .side-cert strong { font-weight: 600; color: var(--primary); display: block; margin-bottom: 3px;}
+        .side-cert .meta { color: var(--muted); font-size: calc(var(--body-size) * 0.90); }
+        .side-ref {
+            margin-bottom: 10px; padding: 8px 10px;
+            background: var(--background); border: 1px solid var(--border); border-radius: 3px;
+        }
+        .side-ref p { font-size: calc(var(--body-size) * 0.95); font-style: italic; color: color-mix(in srgb, var(--text) 55%, transparent); line-height: 1.5; }
+        .side-ref footer { font-size: calc(var(--body-size) * 0.95); font-weight: 600; color: var(--primary); margin-top: 3px; font-style: normal; }
+        .side-profiles { display: flex; flex-direction: column; gap: 6px; }
+        .side-profiles a { display: flex; align-items: center; gap: 5px; font-size: calc(var(--body-size) * 0.95); color: var(--text-muted); text-decoration: none; }
+        .side-profiles svg { width: 10px; height: 10px; flex-shrink: 0; fill: var(--muted); }
+
+        @media print {
+            .hero, .section-card, .side-col { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            section { break-inside: avoid; page-break-inside: avoid; }
+            .pdf-primary-col, .pdf-secondary-col { page-break-inside: auto; }
+            section > [style*="margin"] { break-inside: avoid; page-break-inside: avoid; }
+        }
+    </style>
+        <style>html { background: #FFFFFF !important; } body { background: transparent !important; }</style><style>section { border: none !important; box-shadow: none !important; }
+.avatar, .sidebar-photo, .sidebar-avatar, .header-photo, .header-avatar, .banner-avatar, .hero-photo, .sb-avatar, .photo-circle { border-radius: 12px !important; }
+.avatar img, .sidebar-photo img, .sidebar-avatar img, .header-photo img, .header-avatar img, .banner-avatar img, .hero-photo img, .sb-avatar img, .photo-circle img, .photo-wrap img { border-radius: 12px !important; }
+[data-header-bg="none"] { background: transparent !important; box-shadow: none !important; color: var(--text) !important; }
+[data-header-bg="none"].topbar, [data-header-bg="none"].banner, [data-header-bg="none"].header-bg, [data-header-bg="none"].header-banner { padding: 16px 24px 14px !important; }
+[data-header-bg="none"] * { color: var(--text) !important; }
+[data-header-bg="none"] h1, [data-header-bg="none"] .name-header, [data-header-bg="none"] .banner-name, [data-header-bg="none"] .header-name { color: var(--primary) !important; }
+[data-header-bg="none"] .label, [data-header-bg="none"] .label-header, [data-header-bg="none"] .banner-label, [data-header-bg="none"] .header-label { color: var(--accent) !important; }
+[data-header-bg="none"] svg { fill: var(--text) !important; stroke: var(--text) !important; }
+@media print { [data-header-bg="none"] { background: transparent !important; } }
+</style><style>:root {--banner-padding: 20px; --header-pad-top: 20px; --header-pad-right: 20px; --header-pad-bottom: 20px; --header-pad-left: 20px; --header-space-top: 0px; --header-space-right: 0px; --header-space-bottom: 0px; --header-space-left: 0px; --header-after-gap: 25px; --content-pad-x: 0px; --content-pad-y: 0px; --main-col-pad-x: 0px; --sidebar-col-pad-x: 0px;}</style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "David Chen",
+        "jobTitle": "Principal DevOps Engineer",
+        "email": "david.chen@resora.pro",
+        "telephone": "+1 (555) 765-4321",
+        "url": "",
+        "address": "Seattle, WA "
+    }
+    </script>
+</head>
+<body>
+    <!-- ATS-SKILLS:  -->
+    
+    <div class="sheet pdf-wrapper">
+        <header class="hero pdf-header" data-header-bg="none">
+                        <div class="hero-photo">
+                <img src="http://127.0.0.1:8000/storage/avatars/XDtPzP4DRuuCDh8rnTZLMq61bSO0GoZAPMnCt1kX.jpg" alt="David Chen">
+            </div>
+                        <div class="hero-info">
+            <div class="hero-name">David Chen</div>
+                        <div class="hero-label">Principal DevOps Engineer</div>
+                                    <div class="contact-bar">
+                <span><svg viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg><a href="mailto:david.chen@resora.pro">david.chen@resora.pro</a></span>                <span><svg viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>+1 (555) 765-4321</span>                <span><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>Seattle, WA</span>            </div>
+            
+                            <div class="profile-bar">
+                                        <span>
+                        <span style="display:inline-flex;align-items:center;width:13px;height:13px;vertical-align:middle;margin-right:4px;overflow:hidden;"><svg style="width:13px;height:13px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>
+                        <a href="https://github.com/davidchencloud">
+                        davidchencloud
+                        </a>
+                    </span>
+                                        <span>
+                        <span style="display:inline-flex;align-items:center;width:13px;height:13px;vertical-align:middle;margin-right:4px;overflow:hidden;"><svg style="width:13px;height:13px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                        <a href="https://linkedin.com/in/davidchencloud">
+                        davidchencloud
+                        </a>
+                    </span>
+                                        <span>
+                        <svg viewBox="0 0 20 20" style="width:13px;height:13px;vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"/></svg>
+                        <a href="https://stackoverflow.com/users/davidchen">
+                        davidchen
+                        </a>
+                    </span>
+                                        <span>
+                        <span style="display:inline-flex;align-items:center;width:13px;height:13px;vertical-align:middle;margin-right:4px;overflow:hidden;"><svg style="width:13px;height:13px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></span>
+                        <a href="https://twitter.com/davidchenops">
+                        davidchenops
+                        </a>
+                    </span>
+                                    </div>
+                        </div>
+
+        </header>
+
+        <div class="body">
+            <main class="main-col pdf-primary-col">
+                                <section data-section-key="summary">
+                    <div class="section-card" style="padding-top: 0px;">
+                    <div class="section-title">Summary</div>
+                    <p>High-performing DevOps Leader with 12+ years of expertise architecting secure, resilient, and highly scalable cloud infrastructure. Specialist in high-availability systems, automated CI/CD pipelines, container orchestration, and Infrastructure as Code (IaC). Demonstrated track record of optimizing cloud spend by up to 50% while scaling infrastructure to support 50M+ monthly active users.</p>
+                    </div>
+                </section>
+                
+                                <section data-section-key="work">
+                    <div class="section-card">
+                    <div class="section-title">Experience</div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>CloudScale Systems</h3>
+                            <span class="date">Sep 2022 — </span>
+                        </div>
+                        <div class="entry-sub">Principal DevOps Engineer</div>
+                        <p>Lead global infrastructure strategy for multi-region AWS and hybrid-cloud deployments. Manage an elite platform engineering team of 10. Designed and migrated a legacy microservice network to a unified Kubernetes mesh (EKS), enhancing system fault tolerance and scaling capabilities. Established GitOps practices using ArgoCD, reducing deployment times from 4 hours to 5 minutes with zero downtime.</p>                                            </div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>CyberSecurity Solutions</h3>
+                            <span class="date">Nov 2018 — Aug 2022</span>
+                        </div>
+                        <div class="entry-sub">Lead Cloud Infrastructure Engineer</div>
+                        <p>Designed highly secure, HIPAA-compliant cloud networks. Automated infrastructure provisioning using Terraform and CloudFormation across staging, UAT, and production environments. Spearheaded a massive cost-optimization initiative that reduced annual AWS expenditures by $1.8M while improving server performance by 15% via spot instances and autoscaling tuning.</p>                                            </div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>DataStream Corp.</h3>
+                            <span class="date">Mar 2015 — Oct 2018</span>
+                        </div>
+                        <div class="entry-sub">Senior DevOps Engineer</div>
+                        <p>Built and managed continuous integration/delivery (CI/CD) pipelines for 30+ internal teams using Jenkins and GitLab CI. Spearheaded the containerization of all legacy monolithic applications using Docker, improving local developer productivity and production consistency. Monitored system health with Prometheus, Grafana, and ELK stack.</p>                                            </div>
+                                        </div>
+                </section>
+                
+                                <section data-section-key="education">
+                    <div class="section-card">
+                    <div class="section-title">Education</div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>University of Washington</h3>
+                            <span class="date">Sep 2012 — Jun 2014</span>
+                        </div>
+                        <div class="entry-sub">Computer Science &amp; Systems, Master of Science</div>
+                    </div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>Seattle University</h3>
+                            <span class="date">Sep 2008 — Jun 2012</span>
+                        </div>
+                        <div class="entry-sub">Computer Science, Bachelor of Science</div>
+                    </div>
+                                        </div>
+                </section>
+                
+                                <section data-section-key="projects">
+                    <div class="section-card">
+                    <div class="section-title">Projects</div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>KubeGuard Operator</h3>
+                            <span class="date">May 2023 — </span>
+                        </div>
+                        <div class="entry-meta"><a href="https://github.com/davidchencloud/kubeguard">https://github.com/davidchencloud/kubeguard</a></div>                        <p>An open-source Kubernetes operator written in Go that automatically scans cluster deployments for configuration drift and security vulnerabilities, enforcing real-time policy adjustments.</p>                                                <ul><li>3,500+ GitHub stars</li><li>Adopted by major enterprises for compliance audits</li><li>Featured in CNCF Weekly</li></ul>
+                                            </div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>Zero-Trust Network Migration</h3>
+                            <span class="date">Feb 2021 — Sep 2021</span>
+                        </div>
+                        <div class="entry-meta"><a href="https://cybersec-solutions.com/portfolio/zerotrust">https://cybersec-solutions.com/portfolio/zerotrust</a></div>                        <p>Completed a full security overhaul for a major healthcare provider, moving their patient portal system to a secure zero-trust architecture utilizing Istio service mesh and HashiCorp Vault.</p>                                                <ul><li>Passed rigorous HIPAA and SOC2 audits with zero issues</li><li>Encrypted all transit and rest data</li><li>Managed 100% via Terraform</li></ul>
+                                            </div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>Serverless Edge Router</h3>
+                            <span class="date">Apr 2019 — Dec 2019</span>
+                        </div>
+                        <div class="entry-meta"><a href="https://github.com/davidchencloud/edge-router">https://github.com/davidchencloud/edge-router</a></div>                        <p>Built a high-performance routing service deployed across AWS CloudFront edge locations using Lambda@Edge to dynamically optimize video delivery paths for global media users.</p>                                                <ul><li>Reduced video startup latency by 45%</li><li>Handles 50,000 requests per second at peak</li><li>Built using Node.js and AWS Serverless Framework</li></ul>
+                                            </div>
+                                        </div>
+                </section>
+                
+                                <section data-section-key="volunteer">
+                    <div class="section-card">
+                    <div class="section-title">Volunteering</div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>Hack for Humanity</h3>
+                            <span class="date">Mar 2020 — </span>
+                        </div>
+                        <div class="entry-sub">DevOps Infrastructure Advisor</div>
+                        <p>Voluntarily provisioned and maintained the computing infrastructure, registration servers, and live judging portal for an annual 72-hour global hackathon.</p>                    </div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>Open Source Mentorship Initiative</h3>
+                            <span class="date">Jan 2019 — Dec 2022</span>
+                        </div>
+                        <div class="entry-sub">Technical Mentor</div>
+                        <p>Guided junior developers through their first open-source contributions, specializing in teaching git practices, automated testing, and CI pipelines.</p>                    </div>
+                                        </div>
+                </section>
+                
+                                <section data-section-key="awards">
+                    <div class="section-card">
+                    <div class="section-title">Awards</div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>Cloud Innovator of the Year</h3>
+                            <span class="date">Nov 2023</span>
+                        </div>
+                        <div class="entry-sub">Cloud Infrastructure Summit</div>                        <p>Awarded for groundbreaking work in developing kubeguard and optimizing resource orchestration across complex hybrid cloud setups.</p>                    </div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>Outstanding Service &amp; Support</h3>
+                            <span class="date">Jun 2017</span>
+                        </div>
+                        <div class="entry-sub">DataStream Corp.</div>                        <p>Recognized for leading the emergency migration and recovery of primary databases during a critical datacenter power outage, restoring operations in under 30 minutes.</p>                    </div>
+                                        </div>
+                </section>
+                
+                                <section data-section-key="publications">
+                    <div class="section-card">
+                    <div class="section-title">Publications</div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>Mastering Infrastructure as Code with Terraform</h3>
+                            <span class="date">Feb 2024</span>
+                        </div>
+                        <div class="entry-sub">O&#039;Reilly Media</div>                        <p>A comprehensive 400-page book on advanced Terraform techniques, state management, module design, and continuous delivery systems.</p>                    </div>
+                                        <div class="entry">
+                        <div class="entry-row">
+                            <h3>Achieving High Availability in Kubernetes Mesh</h3>
+                            <span class="date">Jul 2022</span>
+                        </div>
+                        <div class="entry-sub">CNCF Blog</div>                        <p>A detailed engineering blog outlining service mesh design patterns, traffic routing rules, and multi-region failover protocols.</p>                    </div>
+                                        </div>
+                </section>
+                            </main>
+
+            <aside class="side-col pdf-secondary-col">
+                                                                                                                                <div class="sidebar-section">
+                        <div class="side-title">Skills</div>
+                                                <div class="side-skill-cat">
+                            <div class="side-skill-label">Cloud &amp; Infrastructure</div>
+                            <div class="side-tags">
+                                                                <span class="side-tag">AWS (EKS</span><span class="side-tag">RDS</span><span class="side-tag">S3</span><span class="side-tag">IAM</span><span class="side-tag">CloudFront</span><span class="side-tag">VPC)</span><span class="side-tag">Google Cloud Platform (GCP)</span><span class="side-tag">Hybrid Cloud</span><span class="side-tag">On-Premises</span><span class="side-tag">DNS</span><span class="side-tag">CDN</span><span class="side-tag">VPN</span><span class="side-tag">Firewalls</span>                            </div>
+                        </div>
+                                                <div class="side-skill-cat">
+                            <div class="side-skill-label">DevOps &amp; Automation</div>
+                            <div class="side-tags">
+                                                                <span class="side-tag">Kubernetes (K8s)</span><span class="side-tag">Docker</span><span class="side-tag">Terraform</span><span class="side-tag">Ansible</span><span class="side-tag">Chef</span><span class="side-tag">ArgoCD</span><span class="side-tag">Helm</span><span class="side-tag">GitLab CI</span><span class="side-tag">GitHub Actions</span><span class="side-tag">Jenkins</span><span class="side-tag">CircleCI</span>                            </div>
+                        </div>
+                                                <div class="side-skill-cat">
+                            <div class="side-skill-label">Monitoring &amp; Security</div>
+                            <div class="side-tags">
+                                                                <span class="side-tag">Prometheus</span><span class="side-tag">Grafana</span><span class="side-tag">Datadog</span><span class="side-tag">ELK Stack</span><span class="side-tag">New Relic</span><span class="side-tag">HashiCorp Vault</span><span class="side-tag">IAM</span><span class="side-tag">OAuth</span><span class="side-tag">SSL/TLS</span><span class="side-tag">WAF</span><span class="side-tag">Vulnerability Scanning</span>                            </div>
+                        </div>
+                                            </div>
+                                                                            <div class="sidebar-section">
+                        <div class="side-title">Certifications</div>
+                                                <div class="side-cert">
+                            <strong>AWS Certified DevOps Engineer - Professional</strong>
+                                                        <span class="meta">Amazon Web Services &middot; Aug 2023</span>
+                                                    </div>
+                                                <div class="side-cert">
+                            <strong>Certified Kubernetes Administrator (CKA)</strong>
+                                                        <span class="meta">The Linux Foundation (CNCF) &middot; Apr 2022</span>
+                                                    </div>
+                                                <div class="side-cert">
+                            <strong>HashiCorp Certified: Terraform Associate</strong>
+                                                        <span class="meta">HashiCorp &middot; May 2021</span>
+                                                    </div>
+                                            </div>
+
+                                                                            <div class="sidebar-section">
+                        <div class="side-title">Languages</div>
+                                                <div class="side-lang">
+                            <span><strong>English</strong></span>
+                            <span class="fluency">Native</span>
+                        </div>
+                                                <div class="side-lang">
+                            <span><strong>Mandarin Chinese</strong></span>
+                            <span class="fluency">Native</span>
+                        </div>
+                                                <div class="side-lang">
+                            <span><strong>German</strong></span>
+                            <span class="fluency">Advanced</span>
+                        </div>
+                                            </div>
+                                                                            <div class="sidebar-section">
+                        <div class="side-title">Interests</div>
+                        <div class="side-interests">
+                                                        <span class="side-interest-pill">IoT &amp; Smart Home Automation</span>
+                                                        <span class="side-interest-pill">Home Lab &amp; Networking</span>
+                                                        <span class="side-interest-pill">Mountain Biking</span>
+                                                    </div>
+                    </div>
+                                                                            <div class="sidebar-section">
+                        <div class="side-title">References</div>
+                                                <div class="side-ref">
+                            <p>David is the ultimate DevOps practitioner. He doesn&#039;t just manage servers; he treats the entire infrastructure as software, designing elegant, self-healing platforms.</p>
+                            <footer>— Robert Downing</footer>
+                        </div>
+                                                <div class="side-ref">
+                            <p>David&#039;s cost-saving strategies completely saved our operating margins this fiscal year. His expertise in AWS architecture and spot instances is unmatched.</p>
+                            <footer>— Amanda Pierce</footer>
+                        </div>
+                                            </div>
+                                                </aside>
+        </div>
+    </div>
+
+<p style="text-align:center;padding:24px 16px;margin:0;font-family:sans-serif;font-size:12px;color:#94a3b8;">Powered by <a href="http://127.0.0.1:8000" style="color:#6366f1;font-weight:600;text-decoration:none;" rel="noopener">Resora</a> — build your own free resume</p>
+</body>
+</html>
